@@ -4,8 +4,10 @@ import { Form, Formik } from 'formik';
 import { sendMessage } from '../../../../store/slices/chatSlice';
 import styles from './ChatInput.module.sass';
 import CONSTANTS from '../../../../constants';
-import FormInput from '../../../FormInput/FormInput';
 import Schems from '../../../../utils/validators/validationSchems';
+import FormInput from '../../../Forms/FormInput';
+
+
 
 const ChatInput = props => {
   const submitHandler = (values, { resetForm }) => {

@@ -13,9 +13,9 @@ import {
 } from '../../../../store/slices/chatSlice';
 import { chatController } from '../../../../api/ws/socketController';
 import CONSTANTS from '../../../../constants';
-import CatalogListContainer from '../../CatalogComponents/CatalogListContainer/CatalogListContainer';
+import CatalogListContainer from '../../CatalogComponents/CatalogListContainer';
 import CatalogCreation from '../../CatalogComponents/CatalogCreation/CatalogCreation';
-import CatalogListHeader from '../../CatalogComponents/CatalogListHeader/CatalogListHeader';
+import CatalogListHeader from '../../CatalogComponents/CatalogListHeader';
 import ChatError from '../../../ChatError/ChatError';
 
 class Chat extends React.Component {
