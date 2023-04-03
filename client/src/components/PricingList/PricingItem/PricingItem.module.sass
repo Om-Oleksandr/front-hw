@@ -1,0 +1,110 @@
+.card
+    flex: 0 0 25%
+    transition: padding-bottom 0.3s ease 0s
+    height: fit-content
+    @media (hover: hover)
+        &:hover .caption
+            box-shadow: 0 10px 15px #8f8f8f
+    @media (min-width: 905px)
+        padding: 0 15px 15px
+    @media (max-width: 905px)
+        flex: 0 0 100%
+        border: 5px solid
+        &.is-open
+            padding-bottom: 15px
+    & .caption
+        border: 10px solid
+        padding: 16px
+        display: inline-block
+        width: 100%
+        min-height: 215px
+        background-color: #fff
+        position: relative
+        & h2
+            font:
+                size: 33px
+                weight: bold
+            margin-bottom: 10px
+        & .sub-title
+            color: initial
+            line-height: 1.5rem
+            min-height: 75px
+        & .price
+            text-align: end
+            font:
+                size: 28px
+                weight: 500
+        @media (max-width: 905px)
+            min-height: auto
+            border: none
+            cursor: pointer
+            display: flex
+            column-gap: 10px
+            & h2
+                margin-bottom: 0
+            & .price
+                font-size: 33px
+            & span
+                position: absolute
+                display: block
+                top: 50%
+                right: 5%
+                width: 16px
+                height: 2px
+                background-color: currentColor
+                transition: all 0.3s ease 0s
+                transform-origin
+                &:first-of-type
+                    transform: rotate(45deg) translate(-30%, 150%)
+                &:last-of-type
+                    transform: rotate(-45deg) translate(30%, 150%)
+    & .body
+        padding: 0 16px
+        display: grid
+        transition: all 0.3s ease 0s
+        @media (max-width: 905px)
+            max-height: 0
+            overflow: hidden
+        & .features li,
+        & p
+            position: relative
+            &:before
+                content: attr(data-tooltip)
+                position: absolute
+                padding: 15px
+                right: 0
+                transform: translate(107%,-50%)
+                background-color: #fff
+                border: 1px solid rgba(0,0,0,0.5)
+                border-radius: 16px
+                opacity: 0
+                pointer-events: none
+                z-index: 999
+            &:hover:before
+                opacity: 1
+        & .features
+            padding: 0 0 0 16px
+            list-style-image: url(./check-bold.svg)
+        & ul li,
+        p,
+        span
+            padding: 10px 0
+        & button
+            color: #fff
+            font:
+                size: 18px
+                weight: 700
+            border:
+                style: none
+                radius: 3px
+            padding: 15px 0
+    &.is-open
+        & .caption
+            & span
+                &:first-of-type
+                    transform: rotate(-45deg) translate(-10%, -300%)
+                &:last-of-type
+                    transform: rotate(45deg) translate(10%, -300%)
+        & .body
+            max-height: 700px
+            

@@ -9,6 +9,8 @@ import styles from './Home.module.sass';
 import carouselConstants from '../../carouselConstants';
 import Spinner from '../../components/Spinner/Spinner';
 import Advantage from '../../components/Advantage';
+import CollectionNames from './../../components/CollectionNames';
+import Tabs from './../../components/Tabs';
 
 const Home = (props) => {
   const [index, setIndex] = useState(0);
@@ -37,6 +39,8 @@ const Home = (props) => {
         <Spinner mtop />
       ) : (
         <>
+        <CollectionNames />
+        <Tabs />
           <div className={styles.container}>
             <div className={styles.headerBar}>
               <div className={styles.headline}>
