@@ -38,9 +38,10 @@ const Tabs = () => {
   };
   const renderTab = (tab, index) => (
     <Tab key={index} tab={tab} openTab={openTab} />
-  )
+  );
   return (
-    <section className={styles.container}>
+    <section className={styles.tab_container}>
+      <h1>Frequently asked questions</h1>
       {tabs.map(renderTab)}
     </section>
   );

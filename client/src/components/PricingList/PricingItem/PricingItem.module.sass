@@ -2,7 +2,7 @@
     flex: 0 0 25%
     transition: padding-bottom 0.3s ease 0s
     height: fit-content
-    @media (hover: hover)
+    @media (hover: hover) and (min-width: 906px)
         &:hover .caption
             box-shadow: 0 10px 15px #8f8f8f
     @media (min-width: 905px)
@@ -58,6 +58,15 @@
                     transform: rotate(45deg) translate(-30%, 150%)
                 &:last-of-type
                     transform: rotate(-45deg) translate(30%, 150%)
+        @media (max-width: 420px)
+            padding: 10px
+            & h2,
+            & .price
+                font-size: 26px
+        @media (max-width: 325px)
+            & h2,
+            & .price
+                font-size: 22px
     & .body
         padding: 0 16px
         display: grid
@@ -71,14 +80,16 @@
             &:before
                 content: attr(data-tooltip)
                 position: absolute
+                width: fit-content
                 padding: 15px
                 right: 0
-                transform: translate(107%,-50%)
+                transform: translate(112%,-50%)
                 background-color: #fff
                 border: 1px solid rgba(0,0,0,0.5)
                 border-radius: 16px
                 opacity: 0
                 pointer-events: none
+                transition: opacity 0.4s linear 0s
                 z-index: 999
             &:hover:before
                 opacity: 1
@@ -90,7 +101,9 @@
         span
             padding: 10px 0
         & button
-            color: #fff
+            color: #deddd9
+            text-transform: uppercase
+            letter-spacing: 0.1rem
             font:
                 size: 18px
                 weight: 700
