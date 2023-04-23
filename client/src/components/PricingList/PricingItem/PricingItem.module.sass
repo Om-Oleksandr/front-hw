@@ -53,7 +53,6 @@
                 height: 2px
                 background-color: currentColor
                 transition: all 0.3s ease 0s
-                transform-origin
                 &:first-of-type
                     transform: rotate(45deg) translate(-30%, 150%)
                 &:last-of-type
@@ -77,22 +76,38 @@
         & .features li,
         & p
             position: relative
+            &:before,
+            &:after
+                content: ''
+                position: absolute
+                z-index: 999
+                top: 50%
+                transition: opacity 0.4s linear 0s
             &:before
                 content: attr(data-tooltip)
-                position: absolute
                 width: fit-content
                 padding: 15px
-                right: 0
                 transform: translate(112%,-50%)
+                right: 0
                 background-color: #fff
                 border: 1px solid rgba(0,0,0,0.5)
                 border-radius: 16px
                 opacity: 0
                 pointer-events: none
-                transition: opacity 0.4s linear 0s
-                z-index: 999
-            &:hover:before
+            &:after
+                display: block
+                right: 0
+                transform-origin: top left
+                transform: rotate(-45deg) translate(160%,160%)
+                box-shadow: -1px -1px 2px rgba(0,0,0,0.5)
+                opacity: 0
+                border: 0.45rem solid transparent
+                border-color: #fff transparent transparent #fff
+            &:hover:before,
+            &:hover:after
                 opacity: 1
+        & .features li::after
+            transform: rotate(-45deg) translate(150%,150%)
         & .features
             padding: 0 0 0 16px
             list-style-image: url(./check-bold.svg)
